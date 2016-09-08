@@ -69,7 +69,7 @@ function _spy(fns, opt) {
     spy[fn] = false
     opt.fs[fn] = function() {
       spy[fn] = true
-      return fs[fn].apply(null, [].slice.call(arguments, 0))
+      return fs[fn].apply(null, arguments)
     }
   })
   return spy
